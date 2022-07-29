@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --btn-background : white;;
+  --background :black;
+  --text :rgb(241, 224, 191);
+  --btn-text :black;
+  --hover-color :  darkolivegreen;
+  --border :none
+}
+.light {
+  --background : white;
+  --text :black;
+  --hover-color :wheat;
+  --border :1px solid black
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  background-color: var(--background);
+  color: var(--text);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.profile-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  gap: 20px;
+  margin-left: 5%;
 }
-
-.App-link {
-  color: #61dafb;
+.inner-container {
+  height: 30%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 3vh;
+  gap: 20px;
+}
+.btn-container button {
+  padding: 10px;
+  width: 50%;
+  
+}
+button {
+  color: var(--btn-text);
+  background-color: var(--btn-background);
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  border: var(--border);
+  text-transform: capitalize;
+}
+button:hover {
+  background-color:var(--hover-color);
+}
+.toggle {
+  margin-top: 20px;
+  width: 20%;
+  align-self: center;
+  padding: 10px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

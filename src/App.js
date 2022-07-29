@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import Login from './components/Login';
+import Profile from './components/Profile';
+import themeSlice, { changeTheme } from './slices/themeSlice';
 
 function App() {
+  const state = useSelector(state=>state.theme) 
+  let dispatch = useDispatch(themeSlice)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`app ${state.theme}`}>
+    <div className="inner-container">
+      <Profile/>
+      <Login/>
+      <button onClick={(e)=>dispatch(changeTheme())} className='toggle'>{state.theme}</button>
     </div>
+         </div>
   );
 }
 
